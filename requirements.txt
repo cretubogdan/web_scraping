@@ -1,0 +1,5 @@
+pandas
+phonenumbers
+bs4
+requests
+urllib3

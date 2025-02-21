@@ -8,9 +8,19 @@
             "name": "Python Debugger: WebScraping",
             "type": "debugpy",
             "request": "launch",
-            "program": "main.py",
+            "program": "src/main.py",
             "console": "integratedTerminal",
-            "args": []
+            "args": [
+                "--input",
+                "data/full_sample-websites.csv",
+                "--output",
+                "data/output.csv"
+            ],
+            "env": {
+                "NUM_THREADS": "10",
+                "TIMEOUT": "5",
+                "MAX_SIZE_URL": "100"
+            }
         }
     ]
 }
