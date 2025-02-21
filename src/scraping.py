@@ -17,7 +17,7 @@ def do_web_scraping(websites, output, type):
     else:
         raise ValueError(f"Type: {type} is not a valid form of run")
 
-    columns = ['URL', 'Phone', 'Social']
+    columns = ['domain', 'phone_number', 'social_media']
     data = []
 
     def process_website(website):

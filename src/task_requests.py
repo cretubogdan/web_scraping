@@ -74,6 +74,6 @@ class Task:
     def get_result(self):
         return [
             self.orig_URL,
-            "|".join(self.phone_number),
-            "|".join(self.social_media),
+            self.phone_number[0],
+            self.social_media[0],
         ]

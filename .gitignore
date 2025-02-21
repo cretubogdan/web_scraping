@@ -1,4 +1,5 @@
 data/output*
+data/database.csv
 .venv
 main.log
 sample/*

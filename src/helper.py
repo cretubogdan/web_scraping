@@ -6,9 +6,17 @@ from bs4 import BeautifulSoup
 
 logger = logging.getLogger("scrapy")
 
-CONTACT_KEYWORDS = ["contact", "about", "company", "support", "get-in-touch", "reach-us"]
+CONTACT_KEYWORDS = [
+    "contact", "about", "company", "support", "get-in-touch", "reach-us", 
+    "contact-us", "get-in-touch", "reach-out", "customer-service", "help", 
+    "support-center", "helpdesk", "service", "contact-form", "inquiries", 
+    "connect", "support-us", "questions", "talk-to-us", "contact-information", 
+    "contact-details", "contact-support", "contact-us-now", "email-us", 
+    "call-us", "client-support", "get-help", "how-to-reach-us", "contact-page", 
+    "customer-care"
+]
 SOCIAL_MEDIA_PLATFORMS = [
-    "facebook", "twitter", "instagram", "linkedin", "youtube", "tiktok", "pinterest", "snapchat"
+    "facebook"#, "twitter", "instagram", "linkedin", "youtube", "tiktok", "pinterest", "snapchat"
 ]
 MAX_SIZE_URL = int(os.getenv("MAX_SIZE_URL", 100))
 

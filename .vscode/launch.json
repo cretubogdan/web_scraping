@@ -49,11 +49,37 @@
             "name": "WebScraping: Coverage",
             "type": "debugpy",
             "request": "launch",
-            "program": "src/coverage.py",
+            "program": "scripts/coverage.py",
             "console": "integratedTerminal",
             "args": [
                 "data/output_req.csv",
                 "data/output_selenium.csv"
+            ],
+            "env": {}
+        },
+        {
+            "name": "WebScraping: Merge",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/merge.py",
+            "console": "integratedTerminal",
+            "args": [
+                "data/output_req.csv",
+                "data/sample-websites-company-names.csv",
+                "data/database.csv"
+            ],
+            "env": {}
+        },
+        {
+            "name": "WebScraping: RestAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/merge.py",
+            "console": "integratedTerminal",
+            "args": [
+                "data/output_req.csv",
+                "data/sample-websites-company-names.csv",
+                "data/database.csv"
             ],
             "env": {}
         }
