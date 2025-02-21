@@ -1,22 +1,3 @@
-
-
-
-
-
-
-def fetch_html(url):
-    try:
-        driver.get("http://" + url)
-        time.sleep(5)
-        page_source = driver.page_source
-        return page_source
-    except Exception as e:
-        print(f"Error while fetching {url}: {e}")
-        return None
-
-
-
-
 import os
 import time
 import logging
