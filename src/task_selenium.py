@@ -13,7 +13,6 @@ logger = logging.getLogger("scrapy")
 
 TIMEOUT = int(os.getenv("TIMEOUT", 5))
 SELENIUM_DRIVE = os.getenv("SELENIUM_DRIVE")
-# driver_path = ChromeDriverManager().install()
 
 class Task:
     def __init__(self, URL, id):

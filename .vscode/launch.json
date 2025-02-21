@@ -55,11 +55,7 @@
                 "data/output_req.csv",
                 "data/output_selenium.csv"
             ],
-            "env": {
-                "NUM_THREADS": "10",
-                "TIMEOUT": "5",
-                "MAX_SIZE_URL": "100"
-            }
+            "env": {}
         }
     ]
 }
