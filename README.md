@@ -1,5 +1,7 @@
-# web_scraping
+# web_scraping Veridion
 My web scraping
 Setup: "source setup.sh"
 Prereq: python3 (3.9.6)
-Run: python3 src/main.py --input data/sample-websites.csv
+Run: check launch.json
+Can be run with requests or selenium.
+Coverage script to check the accuracy.
