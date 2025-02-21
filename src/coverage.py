@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 
 if len(sys.argv) < 2:
-    print("Usage: python cov.py <output_req> <output_selenium>")
+    print("Usage: python coverage.py <output_req> <output_selenium>")
     sys.exit(1)
 
 output_req = sys.argv[1]

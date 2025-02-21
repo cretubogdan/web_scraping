@@ -49,7 +49,7 @@
             "name": "WebScraping: Coverage",
             "type": "debugpy",
             "request": "launch",
-            "program": "src/cov.py",
+            "program": "src/coverage.py",
             "console": "integratedTerminal",
             "args": [
                 "data/output_req.csv",
