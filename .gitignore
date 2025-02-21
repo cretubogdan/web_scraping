@@ -1,3 +1,4 @@
-data/output.csv
+data/output*
 .venv
 main.log
+sample/*

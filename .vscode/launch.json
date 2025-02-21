@@ -5,16 +5,54 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: WebScraping",
+            "name": "WebScraping: REQ",
             "type": "debugpy",
             "request": "launch",
             "program": "src/main.py",
             "console": "integratedTerminal",
             "args": [
                 "--input",
-                "data/full_sample-websites.csv",
+                "data/sample-websites.csv",
                 "--output",
-                "data/output.csv"
+                "data/output_req.csv",
+                "--type",
+                "raw_req"
+            ],
+            "env": {
+                "NUM_THREADS": "10",
+                "TIMEOUT": "5",
+                "MAX_SIZE_URL": "100"
+            }
+        },
+        {
+            "name": "WebScraping: SELENIUM",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--input",
+                "data/sample-websites.csv",
+                "--output",
+                "data/output_selenium.csv",
+                "--type",
+                "selenium"
+            ],
+            "env": {
+                "NUM_THREADS": "10",
+                "TIMEOUT": "5",
+                "MAX_SIZE_URL": "100"
+            }
+        },
+        {
+            "name": "WebScraping: Coverage",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/cov.py",
+            "console": "integratedTerminal",
+            "args": [
+                "data/output_req.csv",
+                "data/output_selenium.csv"
             ],
             "env": {
                 "NUM_THREADS": "10",

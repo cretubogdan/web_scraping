@@ -4,14 +4,19 @@ import logging
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from task import Task
 
-
-logger = logging.getLogger("main")
+logger = logging.getLogger("scrapy")
 
 NUM_THREADS = int(os.getenv("NUM_THREADS", 10))
 
-def do_web_scraping(websites, output):
+def do_web_scraping(websites, output, type):
+    if 'raw_req' == type:
+        from task_requests import Task
+    elif 'selenium' == type:
+        from task_selenium import Task
+    else:
+        raise ValueError(f"Type: {type} is not a valid form of run")
+
     columns = ['URL', 'Phone', 'Social']
     data = []
 

@@ -3,3 +3,5 @@ phonenumbers
 bs4
 requests
 urllib3
+selenium
+webdriver_manager
