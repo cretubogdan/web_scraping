@@ -12,7 +12,7 @@
             "console": "integratedTerminal",
             "args": [
                 "--input",
-                "data/sample-websites.csv",
+                "data/full_sample-websites.csv",
                 "--output",
                 "data/output_req.csv",
                 "--type",
@@ -32,7 +32,7 @@
             "console": "integratedTerminal",
             "args": [
                 "--input",
-                "data/sample-websites.csv",
+                "data/full_sample-websites.csv",
                 "--output",
                 "data/output_selenium.csv",
                 "--type",
@@ -40,8 +40,9 @@
             ],
             "env": {
                 "NUM_THREADS": "10",
-                "TIMEOUT": "5",
-                "MAX_SIZE_URL": "100"
+                "TIMEOUT": "3",
+                "MAX_SIZE_URL": "100",
+                "SELENIUM_DRIVE": "/Users/bogcretu/Utils/chromedriver"
             }
         },
         {

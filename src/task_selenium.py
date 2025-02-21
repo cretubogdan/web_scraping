@@ -12,7 +12,8 @@ import helper
 logger = logging.getLogger("scrapy")
 
 TIMEOUT = int(os.getenv("TIMEOUT", 5))
-
+SELENIUM_DRIVE = os.getenv("SELENIUM_DRIVE")
+# driver_path = ChromeDriverManager().install()
 
 class Task:
     def __init__(self, URL, id):
@@ -24,7 +25,7 @@ class Task:
         self.phone_number = []
         self.social_media = []
         self.html = []
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        self.driver = webdriver.Chrome(service=Service(SELENIUM_DRIVE))
 
     def __del__(self):
         self.driver.quit()
