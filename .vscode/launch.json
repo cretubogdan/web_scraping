@@ -71,17 +71,16 @@
             "env": {}
         },
         {
-            "name": "WebScraping: RestAPI",
+            "name": "FastAPI: Uvicorn",
             "type": "debugpy",
             "request": "launch",
-            "program": "scripts/merge.py",
+            "program": "src/rest_api.py",
             "console": "integratedTerminal",
             "args": [
-                "data/output_req.csv",
-                "data/sample-websites-company-names.csv",
-                "data/database.csv"
-            ],
-            "env": {}
+                "run",
+                "app:app",
+                "--reload"
+            ]
         }
     ]
 }
