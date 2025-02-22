@@ -95,7 +95,6 @@ async def match_company(company_info: CompanyInfo):
     }
 
     rsp = es.search(index=INDEX, body=query)
-    to_return = []
-    for r in rsp["hits"]["hits"]:
-        to_return.append(r["_source"])
-    return to_return
+    if len(rsp['hits']['hits']):
+        return rsp['hits']['hits'][0]
+    return None

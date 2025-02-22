@@ -4,6 +4,7 @@ import pandas as pd
 
 def test_bulk_requests():
     df = pd.read_csv("data/API-input-sample.csv")
+    df = df.fillna('')
     url = "http://localhost:8000/match_company"
     for _, row in df.iterrows():
         input_name = row.get("input_name")
