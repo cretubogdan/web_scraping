@@ -1,4 +1,5 @@
 import os
+import re
 import logging
 import phonenumbers
 from bs4 import BeautifulSoup
@@ -40,6 +41,9 @@ def parse_for_contact_page(URL, htmls):
     logger.debug(f"A number of {len(links)} have been found!")
     return links
 
+def format_phone_number(phone_number):
+    return phonenumbers.format_number(phone_number, phonenumbers.PhoneNumberFormat.E164)
+
 def find_phone_number(htmls, country="US"):
     to_return = []
     for html in htmls:
@@ -51,10 +55,14 @@ def find_phone_number(htmls, country="US"):
         valid_numbers = []
         for match in phone_numbers:
             if phonenumbers.is_valid_number(match.number):
-                formatted_number = phonenumbers.format_number(match.number, phonenumbers.PhoneNumberFormat.E164)
+                formatted_number = format_phone_number(match.number)
                 valid_numbers.append(formatted_number)
         to_return.extend(valid_numbers)
     return to_return
+
+def clean_social_media(url):
+    url = re.sub(r"^(https?://)?(www\.)?", "", url)
+    return url
 
 def find_social_media(htmls):
     to_return = []
@@ -68,6 +76,7 @@ def find_social_media(htmls):
             url = link.get("href")
             if any(platform in url.lower() for platform in SOCIAL_MEDIA_PLATFORMS):
                 if len(url) < MAX_SIZE_URL:
-                    social_links.append(url)
+                    cleaned_url = clean_social_media(url)
+                    social_links.append(cleaned_url)
         to_return.extend(social_links)
     return to_return

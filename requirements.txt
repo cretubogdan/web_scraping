@@ -8,3 +8,4 @@ webdriver_manager
 fastapi
 uvicorn
 elasticsearch
+pytest
