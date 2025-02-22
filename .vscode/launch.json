@@ -80,10 +80,13 @@
                 "--reload"
             ],
             "env": {
-                "PYTHONPATH": "${workspaceFolder}/src"
+                "PYTHONPATH": "${workspaceFolder}/src",
+                "DATASET": "data/database.csv",
+                "ES_USER": "elastic",
+                "ES_PASS": "a_strong_password"
             },
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": true,
         }
     ]
 }

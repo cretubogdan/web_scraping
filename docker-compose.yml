@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=a_strong_password
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    networks:
+      - es_network
+    container_name: elasticsearch
+
+volumes:
+  esdata1:
+    driver: local
+
+networks:
+  es_network:
+    driver: bridge

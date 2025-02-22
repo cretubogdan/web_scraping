@@ -74,11 +74,8 @@ class Task:
 
 
     def get_result(self):
-        url = self.orig_URL
-        phone_number = self.phone_number[0] if len(self.phone_number) else ''
-        social_media = self.social_media[0] if len(self.social_media) else ''
         return [
-            url,
-            phone_number,
-            social_media
+            self.orig_URL,
+            " | ".join(self.phone_number),
+            " | ".join(self.social_media)
         ]
